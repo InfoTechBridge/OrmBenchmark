@@ -30,15 +30,26 @@ namespace OrmBenchmark.PetaPoco
             //petapoco.ForceDateTimesToUtc = false;
         }
 
-        public object GetItem(int Id)
+        public object GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
             return petapoco.Fetch<Post>("select * from Posts where Id=@0", Id).First();
         }
 
-        public object GetItems(string Id)
+        public dynamic GetItemAsDynamic(int Id)
         {
-            return petapoco.Fetch<Post>("select * from Posts").ToList();
+            object param = new { Id = Id };
+            return petapoco.Fetch<Post>("select * from Posts where Id=@0", Id).First();
+        }
+
+        public IList<object> GetAllItemsAsObject()
+        {
+            return petapoco.Fetch<Post>("select * from Posts").ToList<object>();
+        }
+
+        public IList<dynamic> GetAllItemsAsDynamic()
+        {
+            return petapoco.Fetch<Post>("select * from Posts").ToList<object>();
         }
 
         public void Finish()

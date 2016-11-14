@@ -46,7 +46,7 @@ namespace OrmBenchmark.Core
                 for (int i = 1; i <= IterationCount; i++)
                 {
                     watch.Start();
-                    executer.GetItem(i);
+                    executer.GetItemAsObject(i);
                     watch.Stop();
                 }
 
@@ -54,7 +54,7 @@ namespace OrmBenchmark.Core
 
                 Stopwatch watchForAllItems = new Stopwatch();
                 watchForAllItems.Start();
-                executer.GetItems("");
+                executer.GetAllItemsAsObject();
                 watchForAllItems.Stop();
 
                 resultsForAllItems.Add(new BenchmarkResult { Name = executer.Name, ExecTime = new TimeSpan(watchForAllItems.ElapsedTicks) });

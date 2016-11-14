@@ -27,7 +27,7 @@ namespace OrmBenchmark.Dapper
             conn.Open();
         }
 
-        public object GetItem(int Id)
+        public object GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
             return conn.Query("select * from Posts where Id=@Id", param, buffered: false).First();

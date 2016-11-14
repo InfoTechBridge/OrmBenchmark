@@ -38,18 +38,27 @@ namespace OrmBenchmark.OrmToolkit
             };
         }
 
-        public object GetItem(int Id)
+        public object GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
             return conn.Query<Post>("select * from Posts where Id=@Id", param, option).First();
         }
-
-        public object GetItems(string Id)
+        
+        public dynamic GetItemAsDynamic(int Id)
         {
             object param = new { Id = Id };
-            return conn.Query<Post>("select * from Posts", null, option).ToList();
+            return conn.Query("select * from Posts where Id=@Id", param).First();
         }
 
+        public IList<object> GetAllItemsAsObject()
+        {
+            return conn.Query<Post>("select * from Posts", null, option).ToList<object>();
+        }
+
+        public IList<dynamic> GetAllItemsAsDynamic()
+        {
+            return conn.Query("select * from Posts", null).ToList();
+        }
         public void Finish()
         {
             conn.Close();

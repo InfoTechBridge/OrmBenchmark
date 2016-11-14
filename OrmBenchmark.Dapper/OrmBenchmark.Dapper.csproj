@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DapperBufferedExecuter.cs" />
-    <Compile Include="DapperDynamicExecuter.cs" />
     <Compile Include="DapperExecuter.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

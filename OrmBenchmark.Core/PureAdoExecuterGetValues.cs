@@ -26,7 +26,7 @@ namespace OrmBenchmark.Core
             conn.Open();
         }
 
-        public object GetItem(int Id)
+        public object GetItemAsObject(int Id)
         {
             var cmd = conn.CreateCommand();
             cmd.CommandText = @"select Id, [Text], [CreationDate], LastChangeDate, 
@@ -81,9 +81,19 @@ namespace OrmBenchmark.Core
             return null;
         }
 
-        public object GetItems(string Id)
+        public dynamic GetItemAsDynamic(int Id)
         {
-            return null;
+            throw new NotImplementedException();
+        }
+
+        public IList<object> GetAllItemsAsObject()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<dynamic> GetAllItemsAsDynamic()
+        {
+            throw new NotImplementedException();
         }
 
         public void Finish()

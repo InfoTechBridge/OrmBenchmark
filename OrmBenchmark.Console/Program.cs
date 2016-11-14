@@ -19,10 +19,10 @@ namespace OrmBenchmark.ConsoleUI
             benchmarker.RegisterOrmExecuter(new PureAdoExecuter());
             //benchmarker.RegisterOrmExecuter(new PureAdoExecuterGetValues());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitExecuter());
-            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitDynamicExecuter());
+            //benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitDynamicExecuter());
             benchmarker.RegisterOrmExecuter(new Dapper.DapperExecuter());
             benchmarker.RegisterOrmExecuter(new Dapper.DapperBufferedExecuter());
-            benchmarker.RegisterOrmExecuter(new Dapper.DapperDynamicExecuter());
+            //benchmarker.RegisterOrmExecuter(new Dapper.DapperDynamicExecuter());
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoExecuter());
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFastExecuter());
 

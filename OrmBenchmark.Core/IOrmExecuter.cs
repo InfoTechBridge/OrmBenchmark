@@ -10,8 +10,10 @@ namespace OrmBenchmark.Core
     {
         string Name { get; }
         void Init(string connectionStrong);
-        object GetItem(int Id);
-        object GetItems(string Id);
+        object GetItemAsObject(int Id);
+        dynamic GetItemAsDynamic(int Id);
+        IList<object> GetAllItemsAsObject();
+        IList<dynamic> GetAllItemsAsDynamic();
         void Finish();
     }
 }
