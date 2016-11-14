@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OrmBenchmark.PetaPoco
 {
-    public class PetaPocoExecuter : IOrmExecuter
+    public class PetaPocoFetchExecuter : IOrmExecuter
     {
         Database petapoco;
 
@@ -17,7 +17,7 @@ namespace OrmBenchmark.PetaPoco
         {
             get
             {
-                return "Peta Poco (Query)";
+                return "Peta Poco (Fetch)";
             }
         }
 
@@ -30,12 +30,12 @@ namespace OrmBenchmark.PetaPoco
         public object GetItem(int Id)
         {
             object param = new { Id = Id };
-            return petapoco.Query<Post>("select * from Posts where Id=@0", Id).First();
+            return petapoco.Fetch<Post>("select * from Posts where Id=@0", Id).First();
         }
 
         public object GetItems(string Id)
         {
-            return petapoco.Query<Post>("select * from Posts").ToList();
+            return petapoco.Fetch<Post>("select * from Posts");
         }
 
         public void Finish()

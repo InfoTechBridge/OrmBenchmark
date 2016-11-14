@@ -17,7 +17,7 @@ namespace OrmBenchmark.PetaPoco
         {
             get
             {
-                return "Peta Poco (Fast)";
+                return "Peta Poco (Query Fast)";
             }
         }
 
@@ -33,12 +33,12 @@ namespace OrmBenchmark.PetaPoco
         public object GetItem(int Id)
         {
             object param = new { Id = Id };
-            return petapoco.Fetch<Post>("select * from Posts where Id=@0", Id).First();
+            return petapoco.Query<Post>("select * from Posts where Id=@0", Id).First();
         }
 
         public object GetItems(string Id)
         {
-            return petapoco.Fetch<Post>("select * from Posts").ToList();
+            return petapoco.Query<Post>("select * from Posts").ToList();
         }
 
         public void Finish()

@@ -59,7 +59,37 @@ namespace OrmBenchmark.Core
 
         public object GetItems(string Id)
         {
-            return null;
+            var cmd = conn.CreateCommand();
+            cmd.CommandText = @"select Id, [Text], [CreationDate], LastChangeDate, 
+                Counter1,Counter2,Counter3,Counter4,Counter5,Counter6,Counter7,Counter8,Counter9 from Posts";
+
+            List<dynamic> list = new List<dynamic>();
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    dynamic obj = new
+                    {
+                        Id = reader.GetInt32(0),
+                        Text = reader.GetValue(1),
+                        CreationDate = reader.GetDateTime(2),
+                        LastChangeDate = reader.GetDateTime(3),
+                        Counter1 = reader.GetNullableValue<int>(4),
+                        Counter2 = reader.GetNullableValue<int>(5),
+                        Counter3 = reader.GetNullableValue<int>(6),
+                        Counter4 = reader.GetNullableValue<int>(7),
+                        Counter5 = reader.GetNullableValue<int>(8),
+                        Counter6 = reader.GetNullableValue<int>(9),
+                        Counter7 = reader.GetNullableValue<int>(10),
+                        Counter8 = reader.GetNullableValue<int>(11),
+                        Counter9 = reader.GetNullableValue<int>(12),
+                    };
+
+                    list.Add(obj);
+                }
+            }
+
+            return list;
         }
 
         public void Finish()

@@ -1,41 +1,38 @@
 ﻿using OrmBenchmark.Core;
-using PetaPoco;
+using Simple.Data;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrmBenchmark.PetaPoco
+namespace OrmBenchmark.SimpleData
 {
-    public class PetaPocoExecuter : IOrmExecuter
+    public class SimpleDataExecuter : IOrmExecuter
     {
-        Database petapoco;
+        dynamic sdb;
 
         public string Name
         {
             get
             {
-                return "Peta Poco (Query)";
+                return "Simple.Data";
             }
         }
 
         public void Init(string connectionStrong)
         {
-            petapoco = new Database(connectionStrong, "System.Data.SqlClient");
-            petapoco.OpenSharedConnection();
+            sdb = Database.OpenConnection(connectionStrong);//, "System.Data.SqlClient");
         }
 
         public object GetItem(int Id)
         {
-            object param = new { Id = Id };
-            return petapoco.Query<Post>("select * from Posts where Id=@0", Id).First();
+            return sdb.Posts.FindById(Id);
         }
 
         public object GetItems(string Id)
         {
-            return petapoco.Query<Post>("select * from Posts").ToList();
+            return sdb.Posts.All().ToList();
         }
 
         public void Finish()

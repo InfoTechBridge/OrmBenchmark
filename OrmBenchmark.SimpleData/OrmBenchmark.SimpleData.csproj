@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{20406817-10AB-47CC-9D6F-C58E33A349D7}</ProjectGuid>
+    <ProjectGuid>{F2A4A7EF-1372-45C9-9955-B4A98FE869BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OrmBenchmark.PetaPoco</RootNamespace>
-    <AssemblyName>OrmBenchmark.PetaPoco</AssemblyName>
+    <RootNamespace>OrmBenchmark.SimpleData</RootNamespace>
+    <AssemblyName>OrmBenchmark.SimpleData</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Simple.Data, Version=0.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simple.Data.Core.0.19.0.0\lib\net40\Simple.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Simple.Data.Ado, Version=0.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simple.Data.Ado.0.19.0.0\lib\net40\Simple.Data.Ado.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Simple.Data.SqlServer, Version=0.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simple.Data.SqlServer.0.19.0.0\lib\net40\Simple.Data.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,38 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Generated\Database.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PetaPoco.cs" />
-    <Compile Include="PetaPocoFetchFastExecuter.cs" />
-    <Compile Include="PetaPocoFetchExecuter.cs" />
-    <Compile Include="PetaPocoFastExecuter.cs" />
-    <Compile Include="PetaPocoExecuter.cs" />
-    <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Models\Generated\PetaPoco.Core.ttinclude" />
-    <None Include="Models\Generated\PetaPoco.Generator.ttinclude" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Models\Generated\Database.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Database.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Compile Include="SimpleDataExecuter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj">
-      <Project>{e4018574-ea43-4347-9822-0921ae52af8b}</Project>
+      <Project>{E4018574-EA43-4347-9822-0921AE52AF8B}</Project>
       <Name>OrmBenchmark.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
