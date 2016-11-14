@@ -48,6 +48,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Simple.Data, Version=0.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simple.Data.Core.0.19.0.0\lib\net40\Simple.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Simple.Data.Ado, Version=0.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simple.Data.Ado.0.19.0.0\lib\net40\Simple.Data.Ado.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Simple.Data.SqlServer, Version=0.19.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Simple.Data.SqlServer.0.19.0.0\lib\net40\Simple.Data.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -69,12 +81,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OrmBenchmark.Ado\OrmBenchmark.Ado.csproj">
+      <Project>{c06eeba4-c0e4-4d6a-b6c7-8a5bc03c9079}</Project>
+      <Name>OrmBenchmark.Ado</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj">
       <Project>{e4018574-ea43-4347-9822-0921ae52af8b}</Project>
       <Name>OrmBenchmark.Core</Name>
@@ -90,6 +107,10 @@
     <ProjectReference Include="..\OrmBenchmark.PetaPoco\OrmBenchmark.PetaPoco.csproj">
       <Project>{20406817-10ab-47cc-9d6f-c58e33a349d7}</Project>
       <Name>OrmBenchmark.PetaPoco</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.SimpleData\OrmBenchmark.SimpleData.csproj">
+      <Project>{f2a4a7ef-1372-45c9-9955-b4a98fe869bd}</Project>
+      <Name>OrmBenchmark.SimpleData</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

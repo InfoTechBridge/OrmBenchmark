@@ -46,18 +46,20 @@ namespace OrmBenchmark.Core
                 for (int i = 1; i <= IterationCount; i++)
                 {
                     watch.Start();
-                    executer.GetItemAsObject(i);
+                    dynamic obj = executer.GetItem(i);
                     watch.Stop();
+                    if (obj.Id != i)
+                        throw new ApplicationException("Invalid object returned.");
                 }
 
-                results.Add(new BenchmarkResult { Name = executer.Name, ExecTime = new TimeSpan(watch.ElapsedTicks) });
+                results.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watch.ElapsedMilliseconds });
 
                 Stopwatch watchForAllItems = new Stopwatch();
                 watchForAllItems.Start();
-                executer.GetAllItemsAsObject();
+                executer.GetItems("");
                 watchForAllItems.Stop();
 
-                resultsForAllItems.Add(new BenchmarkResult { Name = executer.Name, ExecTime = new TimeSpan(watchForAllItems.ElapsedTicks) });
+                resultsForAllItems.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForAllItems.ElapsedMilliseconds });
 
                 executer.Finish();
             }
