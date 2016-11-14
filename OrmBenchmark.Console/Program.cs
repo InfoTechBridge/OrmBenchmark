@@ -13,18 +13,19 @@ namespace OrmBenchmark.ConsoleUI
         static void Main(string[] args)
         {
             string connStr = ConfigurationManager.ConnectionStrings["OrmBenchmark.ConsoleUI.Properties.Settings.OrmBenchmarkConnectionString"].ConnectionString;
+            //string connStr = ConfigurationManager.ConnectionStrings["sqlServerLocal"].ConnectionString;
 
             var benchmarker = new Benchmarker(connStr, 500);
             
             benchmarker.RegisterOrmExecuter(new PureAdoExecuter());
             //benchmarker.RegisterOrmExecuter(new PureAdoExecuterGetValues());
-            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitExecuter());
-            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitDynamicExecuter());
             benchmarker.RegisterOrmExecuter(new Dapper.DapperExecuter());
             benchmarker.RegisterOrmExecuter(new Dapper.DapperBufferedExecuter());
             benchmarker.RegisterOrmExecuter(new Dapper.DapperDynamicExecuter());
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoExecuter());
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFastExecuter());
+            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitExecuter());
+            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitDynamicExecuter());
 
             Console.Write("Running...");
             benchmarker.Run();
