@@ -30,7 +30,7 @@ namespace OrmBenchmark.PetaPoco
         public object GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
-            return petapoco.Fetch<Post>("select * from Posts where Id=@0", Id).First();
+            return petapoco.Query<Post>("select * from Posts where Id=@0", Id).First();
         }
         
         public dynamic GetItemAsDynamic(int Id)
@@ -41,12 +41,12 @@ namespace OrmBenchmark.PetaPoco
 
         public IList<object> GetAllItemsAsObject()
         {
-            return petapoco.Fetch<Post>("select * from Posts").ToList<object>();
+            return petapoco.Query<Post>("select * from Posts").ToList<object>();
         }
 
         public IList<dynamic> GetAllItemsAsDynamic()
         {
-            return petapoco.Fetch<Post>("select * from Posts").ToList<object>();
+            return petapoco.Query<Post>("select * from Posts").ToList<object>();
         }
 
         public void Finish()

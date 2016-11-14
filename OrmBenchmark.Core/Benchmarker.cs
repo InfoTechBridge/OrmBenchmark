@@ -13,6 +13,8 @@ namespace OrmBenchmark.Core
         private List<IOrmExecuter> executers { get; set; }
         public List<BenchmarkResult> results { get; set; }
         public List<BenchmarkResult> resultsForAllItems { get; set; }
+        public List<BenchmarkResult> resultsForDynamicitem { get; set; }
+        public List<BenchmarkResult> resultsForAllDynamicItems { get; set; }
         private int IterationCount { get; set; }
         private string ConnectionString { get; set; }
 
@@ -22,7 +24,9 @@ namespace OrmBenchmark.Core
             IterationCount = iterationCount;
             executers = new List<IOrmExecuter>();
             results = new List<BenchmarkResult>();
+            resultsForDynamicitem = new List<BenchmarkResult>();
             resultsForAllItems = new List<BenchmarkResult>();
+            resultsForAllDynamicItems = new List<BenchmarkResult>();
         }
 
         public void RegisterOrmExecuter(IOrmExecuter executer)
@@ -41,25 +45,43 @@ namespace OrmBenchmark.Core
             foreach (IOrmExecuter executer in executers.OrderBy(ignore => rand.Next()))
             {
                 executer.Init(ConnectionString);
-
+                // Object
                 Stopwatch watch = new Stopwatch();
                 for (int i = 1; i <= IterationCount; i++)
                 {
                     watch.Start();
-                    dynamic obj = executer.GetItem(i);
+                    dynamic obj = executer.GetItemAsObject(i);
                     watch.Stop();
-                    if (obj.Id != i)
-                        throw new ApplicationException("Invalid object returned.");
+                    //if (obj.Id != i)
+                    //    throw new ApplicationException("Invalid object returned.");
                 }
-
                 results.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watch.ElapsedMilliseconds });
-
+                
+                // Dynamic
+                Stopwatch watchForDynamic = new Stopwatch();
+                for (int i = 1; i <= IterationCount; i++)
+                {
+                    watchForDynamic.Start();
+                    dynamic obj = executer.GetItemAsDynamic(i);
+                    watchForDynamic.Stop();
+                    //if (obj.Id != i)
+                    //    throw new ApplicationException("Invalid object returned.");
+                }
+                resultsForDynamicitem.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForDynamic.ElapsedMilliseconds });
+                
+                // All Objects
                 Stopwatch watchForAllItems = new Stopwatch();
                 watchForAllItems.Start();
-                executer.GetItems("");
+                executer.GetAllItemsAsObject();
                 watchForAllItems.Stop();
-
                 resultsForAllItems.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForAllItems.ElapsedMilliseconds });
+
+                // All Dynamics
+                Stopwatch watchForAllDynamicItems = new Stopwatch();
+                watchForAllDynamicItems.Start();
+                executer.GetAllItemsAsDynamic();
+                watchForAllDynamicItems.Stop();
+                resultsForAllDynamicItems.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForAllDynamicItems.ElapsedMilliseconds });
 
                 executer.Finish();
             }

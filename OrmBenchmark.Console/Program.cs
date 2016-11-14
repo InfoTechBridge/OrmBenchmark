@@ -17,18 +17,18 @@ namespace OrmBenchmark.ConsoleUI
 
             var benchmarker = new Benchmarker(connStr, 500);
             
-            benchmarker.RegisterOrmExecuter(new PureAdoExecuter());
+            benchmarker.RegisterOrmExecuter(new Ado.PureAdoExecuter());
             //benchmarker.RegisterOrmExecuter(new PureAdoExecuterGetValues());
             benchmarker.RegisterOrmExecuter(new SimpleData.SimpleDataExecuter());
             benchmarker.RegisterOrmExecuter(new Dapper.DapperExecuter());
             benchmarker.RegisterOrmExecuter(new Dapper.DapperBufferedExecuter());
-            benchmarker.RegisterOrmExecuter(new Dapper.DapperDynamicExecuter());
+            //benchmarker.RegisterOrmExecuter(new Dapper.DapperDynamicExecuter());
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoExecuter());
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFastExecuter());
-            benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchExecuter());
-            benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchFastExecuter());
+            //benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchExecuter());
+            //benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchFastExecuter());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitExecuter());
-            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitDynamicExecuter());
+            //benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitDynamicExecuter());
             
 
             Console.Write("Running...");
@@ -40,9 +40,19 @@ namespace OrmBenchmark.ConsoleUI
             foreach (var result in benchmarker.results.OrderBy(o => o.ExecTime))
                 Console.WriteLine(string.Format("{0,2}-{1,-40} {2,5} ms", ++i, result.Name, result.ExecTime));
 
+            Console.WriteLine("\nResults for one dynamic item:");
+            i = 0;
+            foreach (var result in benchmarker.resultsForDynamicitem.OrderBy(o => o.ExecTime))
+                Console.WriteLine(string.Format("{0,2}-{1,-40} {2,5} ms", ++i, result.Name, result.ExecTime));
+
             Console.WriteLine("\nResults for all items:");
             i = 0;
             foreach (var result in benchmarker.resultsForAllItems.OrderBy(o => o.ExecTime))
+                Console.WriteLine(string.Format("{0,2}-{1,-40} {2,5} ms", ++i, result.Name, result.ExecTime));
+
+            Console.WriteLine("\nResults for all dynamic items:");
+            i = 0;
+            foreach (var result in benchmarker.resultsForAllDynamicItems.OrderBy(o => o.ExecTime))
                 Console.WriteLine(string.Format("{0,2}-{1,-40} {2,5} ms", ++i, result.Name, result.ExecTime));
 
             Console.ReadLine();

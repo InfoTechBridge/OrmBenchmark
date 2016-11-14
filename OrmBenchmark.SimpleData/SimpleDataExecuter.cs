@@ -25,12 +25,22 @@ namespace OrmBenchmark.SimpleData
             sdb = Database.OpenConnection(connectionStrong);//, "System.Data.SqlClient");
         }
 
-        public object GetItem(int Id)
+        public object GetItemAsObject(int Id)
         {
             return sdb.Posts.FindById(Id);
         }
 
-        public object GetItems(string Id)
+        public dynamic GetItemAsDynamic(int Id)
+        {
+            return sdb.Posts.FindById(Id);
+        }
+
+        public IList<object> GetAllItemsAsObject()
+        {
+            return sdb.Posts.All().ToList();
+        }
+
+        public IList<dynamic> GetAllItemsAsDynamic()
         {
             return sdb.Posts.All().ToList();
         }
