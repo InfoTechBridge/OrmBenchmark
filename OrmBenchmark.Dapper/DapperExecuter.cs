@@ -27,7 +27,7 @@ namespace OrmBenchmark.Dapper
             conn.Open();
         }
 
-        public object GetItemAsObject(int Id)
+        public IPost GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
             return conn.Query<Post>("select * from Posts where Id=@Id", param, buffered: false).First();
@@ -39,9 +39,9 @@ namespace OrmBenchmark.Dapper
             return conn.Query("select * from Posts where Id=@Id", param, buffered: false).First();
         }
 
-        public IList<object> GetAllItemsAsObject()
+        public IList<IPost> GetAllItemsAsObject()
         {
-            return conn.Query<Post>("select * from Posts", null, buffered: false).ToList<object>();
+            return conn.Query<Post>("select * from Posts", null, buffered: false).ToList<IPost>();
         }
 
         public IList<dynamic> GetAllItemsAsDynamic()

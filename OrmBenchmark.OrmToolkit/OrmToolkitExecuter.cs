@@ -38,7 +38,7 @@ namespace OrmBenchmark.OrmToolkit
             };
         }
 
-        public object GetItemAsObject(int Id)
+        public IPost GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
             return conn.Query<Post>("select * from Posts where Id=@Id", param, option).First();
@@ -50,9 +50,9 @@ namespace OrmBenchmark.OrmToolkit
             return conn.Query("select * from Posts where Id=@Id", param).First();
         }
 
-        public IList<object> GetAllItemsAsObject()
+        public IList<IPost> GetAllItemsAsObject()
         {
-            return conn.Query<Post>("select * from Posts", null, option).ToList<object>();
+            return conn.Query<Post>("select * from Posts", null, option).ToList<IPost>();
         }
 
         public IList<dynamic> GetAllItemsAsDynamic()

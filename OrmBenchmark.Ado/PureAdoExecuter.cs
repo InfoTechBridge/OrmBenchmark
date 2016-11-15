@@ -26,7 +26,7 @@ namespace OrmBenchmark.Ado
             conn.Open();
         }
 
-        public object GetItemAsObject(int Id)
+        public IPost GetItemAsObject(int Id)
         {
             var cmd = conn.CreateCommand();
             cmd.CommandText = @"select Id, [Text], [CreationDate], LastChangeDate, 
@@ -34,7 +34,7 @@ namespace OrmBenchmark.Ado
             var idParam = cmd.Parameters.Add("@Id", System.Data.SqlDbType.Int);
             idParam.Value = Id;
 
-            dynamic obj;
+            Post obj;
             using (var reader = cmd.ExecuteReader())
             {
                 reader.Read();
@@ -91,18 +91,18 @@ namespace OrmBenchmark.Ado
             return obj;
         }
 
-        public IList<object> GetAllItemsAsObject()
+        public IList<IPost> GetAllItemsAsObject()
         {
             var cmd = conn.CreateCommand();
             cmd.CommandText = @"select Id, [Text], [CreationDate], LastChangeDate, 
                 Counter1,Counter2,Counter3,Counter4,Counter5,Counter6,Counter7,Counter8,Counter9 from Posts";
 
-            List<Post> list = new List<Post>();
+            List<IPost> list = new List<IPost>();
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    dynamic obj = new Post {
+                    Post obj = new Post {
                         Id = reader.GetInt32(0),
                         Text = reader.GetNullableString(1),
                         CreationDate = reader.GetDateTime(2),

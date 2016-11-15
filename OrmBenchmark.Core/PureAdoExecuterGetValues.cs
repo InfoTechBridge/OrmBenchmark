@@ -26,7 +26,7 @@ namespace OrmBenchmark.Core
             conn.Open();
         }
 
-        public object GetItemAsObject(int Id)
+        public IPost GetItemAsObject(int Id)
         {
             var cmd = conn.CreateCommand();
             cmd.CommandText = @"select Id, [Text], [CreationDate], LastChangeDate, 
@@ -86,7 +86,7 @@ namespace OrmBenchmark.Core
             throw new NotImplementedException();
         }
 
-        public IList<object> GetAllItemsAsObject()
+        public IList<IPost> GetAllItemsAsObject()
         {
             throw new NotImplementedException();
         }

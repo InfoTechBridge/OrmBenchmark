@@ -27,7 +27,7 @@ namespace OrmBenchmark.PetaPoco
             petapoco.OpenSharedConnection();
         }
 
-        public object GetItemAsObject(int Id)
+        public IPost GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
             return petapoco.Fetch<Post>("select * from Posts where Id=@0", Id).First();
@@ -39,14 +39,14 @@ namespace OrmBenchmark.PetaPoco
             return petapoco.Fetch<Post>("select * from Posts where Id=@0", Id).First();
         }
 
-        public IList<object> GetAllItemsAsObject()
+        public IList<IPost> GetAllItemsAsObject()
         {
-            return petapoco.Fetch<Post>("select * from Posts").ToList<object>();
+            return petapoco.Fetch<Post>("select * from Posts").ToList<IPost>();
         }
 
         public IList<dynamic> GetAllItemsAsDynamic()
         {
-            return petapoco.Fetch<Post>("select * from Posts").ToList<object>();
+            return petapoco.Fetch<dynamic>("select * from Posts");
         }
 
         public void Finish()

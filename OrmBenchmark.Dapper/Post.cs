@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrmBenchmark.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OrmBenchmark.Dapper
 {
-    public class Post
+    public class Post : IPost
     {
         public int Id { get; set; }
         public string Text { get; set; }

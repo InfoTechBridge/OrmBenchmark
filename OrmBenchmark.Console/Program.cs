@@ -25,8 +25,8 @@ namespace OrmBenchmark.ConsoleUI
             //benchmarker.RegisterOrmExecuter(new Dapper.DapperDynamicExecuter());
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoExecuter());
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFastExecuter());
-            //benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchExecuter());
-            //benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchFastExecuter());
+            benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchExecuter());
+            benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchFastExecuter());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitExecuter());
             //benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitDynamicExecuter());
             
