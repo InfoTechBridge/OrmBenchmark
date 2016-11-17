@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.PetaPoco", "Or
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.OrmToolkit", "OrmBenchmark.OrmToolkit\OrmBenchmark.OrmToolkit.csproj", "{26205493-9B94-4BBE-8A63-30322DC0F001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMToolkit.Core", "..\OrmToolkit\ORMToolkit.Core\ORMToolkit.Core.csproj", "{4ECC4CA2-3AA6-440F-983B-07483D12B90A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.SimpleData", "OrmBenchmark.SimpleData\OrmBenchmark.SimpleData.csproj", "{F2A4A7EF-1372-45C9-9955-B4A98FE869BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.Ado", "OrmBenchmark.Ado\OrmBenchmark.Ado.csproj", "{C06EEBA4-C0E4-4D6A-B6C7-8A5BC03C9079}"
@@ -89,18 +87,6 @@ Global
 		{26205493-9B94-4BBE-8A63-30322DC0F001}.Release|x64.Build.0 = Release|Any CPU
 		{26205493-9B94-4BBE-8A63-30322DC0F001}.Release|x86.ActiveCfg = Release|Any CPU
 		{26205493-9B94-4BBE-8A63-30322DC0F001}.Release|x86.Build.0 = Release|Any CPU
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Debug|x64.ActiveCfg = Debug|x64
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Debug|x64.Build.0 = Debug|x64
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Debug|x86.ActiveCfg = Debug|x86
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Debug|x86.Build.0 = Debug|x86
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Release|x64.ActiveCfg = Release|x64
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Release|x64.Build.0 = Release|x64
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Release|x86.ActiveCfg = Release|x86
-		{4ECC4CA2-3AA6-440F-983B-07483D12B90A}.Release|x86.Build.0 = Release|x86
 		{F2A4A7EF-1372-45C9-9955-B4A98FE869BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2A4A7EF-1372-45C9-9955-B4A98FE869BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2A4A7EF-1372-45C9-9955-B4A98FE869BD}.Debug|x64.ActiveCfg = Debug|Any CPU
