@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrmBenchmark.Core;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrmBenchmark.Core
+namespace OrmBenchmark.Ado
 {
     public class PureAdoExecuterGetValues : IOrmExecuter
     {

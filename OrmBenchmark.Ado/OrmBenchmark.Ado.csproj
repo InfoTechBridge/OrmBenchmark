@@ -43,6 +43,7 @@
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PureAdoExecuter.cs" />
+    <Compile Include="PureAdoExecuterGetValues.cs" />
     <Compile Include="SqlDataReaderExtentions.cs" />
   </ItemGroup>
   <ItemGroup>
