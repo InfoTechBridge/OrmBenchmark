@@ -7,7 +7,7 @@ The goal of project is to show how long it takes to execute SELECT statement(s) 
 
 The performance tests are broken in the following lists:
 
-- Performance test of executing one sql command repetedly:
+- Performance test of executing one sql command frequently:
 	- Performance of execute one select statement and map a returned row to a POCO object over 500 iterations
 	- Performance of execute one select statement and map a returned row to a dynamic object over 500 iterations
 
