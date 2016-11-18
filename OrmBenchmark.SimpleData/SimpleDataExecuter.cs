@@ -47,7 +47,7 @@ namespace OrmBenchmark.SimpleData
 
         public void Finish()
         {
-            //petapoco.Close();
+            
         }
 
     }

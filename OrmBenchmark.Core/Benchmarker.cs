@@ -50,9 +50,9 @@ namespace OrmBenchmark.Core
                 for (int i = 1; i <= IterationCount; i++)
                 {
                     watch.Start();
-                    dynamic obj = executer.GetItemAsObject(i);
+                    var obj = executer.GetItemAsObject(i);
                     watch.Stop();
-                    //if (obj.Id != i)
+                    //if (obj?.Id != i)
                     //    throw new ApplicationException("Invalid object returned.");
                 }
                 results.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watch.ElapsedMilliseconds });
@@ -62,9 +62,9 @@ namespace OrmBenchmark.Core
                 for (int i = 1; i <= IterationCount; i++)
                 {
                     watchForDynamic.Start();
-                    dynamic obj = executer.GetItemAsDynamic(i);
+                    var dynamicObj = executer.GetItemAsDynamic(i);
                     watchForDynamic.Stop();
-                    //if (obj.Id != i)
+                    //if (dynamicObj?.Id != i)
                     //    throw new ApplicationException("Invalid object returned.");
                 }
                 resultsForDynamicitem.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForDynamic.ElapsedMilliseconds });
