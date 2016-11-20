@@ -1,4 +1,5 @@
 ﻿using OrmBenchmark.Core;
+using ORMToolkit.Core.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace OrmBenchmark.OrmToolkit
 {
+    [TableInfo("Posts")]
     public class Post : IPost
     {
         public int Id { get; set; }

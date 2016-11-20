@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using Dapper.Contrib.Extensions;
 
 namespace OrmBenchmark.Dapper
 {
-    public class DapperDynamicExecuter : IOrmExecuter
+    public class DapperContribExecuter : IOrmExecuter
     {
         SqlConnection conn;
 
@@ -17,7 +18,7 @@ namespace OrmBenchmark.Dapper
         {
             get
             {
-                return "Dapper Dynamic Query (Non Buffered)";
+                return "Dapper Contrib";
             }
         }
 
@@ -26,16 +27,25 @@ namespace OrmBenchmark.Dapper
             conn = new SqlConnection(connectionStrong);
             conn.Open();
         }
-
-        public object GetItemAsObject(int Id)
+        
+        public IPost GetItemAsObject(int Id)
         {
-            object param = new { Id = Id };
-            return conn.Query("select * from Posts where Id=@Id", param, buffered: false).First();
+            return conn.Get<Post>(Id);
         }
 
-        public object GetItems(string Id)
+        public dynamic GetItemAsDynamic(int Id)
         {
-            return conn.Query("select * from Posts", null, buffered: false).ToList();
+            return null;
+        }
+
+        public IList<IPost> GetAllItemsAsObject()
+        {
+            return conn.GetAll<Post>().ToList<IPost>();
+        }
+
+        public IList<dynamic> GetAllItemsAsDynamic()
+        {
+            return null;
         }
 
         public void Finish()

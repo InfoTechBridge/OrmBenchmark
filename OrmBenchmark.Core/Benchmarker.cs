@@ -13,8 +13,9 @@ namespace OrmBenchmark.Core
         private List<IOrmExecuter> executers { get; set; }
         public List<BenchmarkResult> results { get; set; }
         public List<BenchmarkResult> resultsForAllItems { get; set; }
-        public List<BenchmarkResult> resultsForDynamicitem { get; set; }
+        public List<BenchmarkResult> resultsForDynamicItem { get; set; }
         public List<BenchmarkResult> resultsForAllDynamicItems { get; set; }
+        public List<BenchmarkResult> resultsWarmUp { get; set; }
         private int IterationCount { get; set; }
         private string ConnectionString { get; set; }
 
@@ -24,9 +25,10 @@ namespace OrmBenchmark.Core
             IterationCount = iterationCount;
             executers = new List<IOrmExecuter>();
             results = new List<BenchmarkResult>();
-            resultsForDynamicitem = new List<BenchmarkResult>();
+            resultsForDynamicItem = new List<BenchmarkResult>();
             resultsForAllItems = new List<BenchmarkResult>();
             resultsForAllDynamicItems = new List<BenchmarkResult>();
+            resultsWarmUp = new List<BenchmarkResult>();
         }
 
         public void RegisterOrmExecuter(IOrmExecuter executer)
@@ -34,19 +36,35 @@ namespace OrmBenchmark.Core
             executers.Add(executer);
         }
 
-        public void Run()
+        public void Run(bool warmUp = false)
         {
             PrepareDatabase();
 
             results.Clear();
+            resultsForDynamicItem.Clear();
             resultsForAllItems.Clear();
+            resultsForAllDynamicItems.Clear();
+            resultsWarmUp.Clear();
 
             var rand = new Random();
             foreach (IOrmExecuter executer in executers.OrderBy(ignore => rand.Next()))
             {
                 executer.Init(ConnectionString);
+
+                // Warm-up
+                if (warmUp)
+                {
+                    Stopwatch watchForWaemUp = new Stopwatch();
+                    watchForWaemUp.Start();
+                    executer.GetItemAsObject(IterationCount + 1);
+                    executer.GetItemAsDynamic(IterationCount + 1);
+                    watchForWaemUp.Stop();
+                    resultsWarmUp.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForWaemUp.ElapsedMilliseconds });
+                }
+
                 // Object
                 Stopwatch watch = new Stopwatch();
+                long firstItemExecTime = 0;
                 for (int i = 1; i <= IterationCount; i++)
                 {
                     watch.Start();
@@ -54,11 +72,14 @@ namespace OrmBenchmark.Core
                     watch.Stop();
                     //if (obj?.Id != i)
                     //    throw new ApplicationException("Invalid object returned.");
+                    if (i == 1)
+                        firstItemExecTime = watch.ElapsedMilliseconds;
                 }
-                results.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watch.ElapsedMilliseconds });
+                results.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watch.ElapsedMilliseconds, FirstItemExecTime = firstItemExecTime});
                 
                 // Dynamic
                 Stopwatch watchForDynamic = new Stopwatch();
+                firstItemExecTime = 0;
                 for (int i = 1; i <= IterationCount; i++)
                 {
                     watchForDynamic.Start();
@@ -66,8 +87,10 @@ namespace OrmBenchmark.Core
                     watchForDynamic.Stop();
                     //if (dynamicObj?.Id != i)
                     //    throw new ApplicationException("Invalid object returned.");
+                    if (i == 1)
+                        firstItemExecTime = watchForDynamic.ElapsedMilliseconds;
                 }
-                resultsForDynamicitem.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForDynamic.ElapsedMilliseconds });
+                resultsForDynamicItem.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForDynamic.ElapsedMilliseconds, FirstItemExecTime = firstItemExecTime });
                 
                 // All Objects
                 Stopwatch watchForAllItems = new Stopwatch();

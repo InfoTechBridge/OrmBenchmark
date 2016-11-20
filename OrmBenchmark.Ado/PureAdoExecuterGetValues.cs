@@ -17,7 +17,7 @@ namespace OrmBenchmark.Ado
         {
             get
             {
-                return "Pure ADO (DataTable)";
+                return "ADO (Pure DataTable)";
             }
         }
 
@@ -26,12 +26,10 @@ namespace OrmBenchmark.Ado
             conn = new SqlConnection(connectionStrong);
             conn.Open();
         }
-
         public IPost GetItemAsObject(int Id)
         {
             var cmd = conn.CreateCommand();
-            cmd.CommandText = @"select Id, [Text], [CreationDate], LastChangeDate, 
-                Counter1,Counter2,Counter3,Counter4,Counter5,Counter6,Counter7,Counter8,Counter9 from Posts where Id = @Id";
+            cmd.CommandText = @"select * from Posts where Id = @Id";
             var idParam = cmd.Parameters.Add("@Id", System.Data.SqlDbType.Int);
             idParam.Value = Id;
 

@@ -10,7 +10,7 @@ using ORMToolkit.Core.Factories;
 
 namespace OrmBenchmark.OrmToolkit
 {
-    public class OrmToolkitExecuter : IOrmExecuter
+    public class OrmToolkitNoQueryExecuter : IOrmExecuter
     {
         SqlConnection conn;
         QueryOption option;
@@ -19,7 +19,7 @@ namespace OrmBenchmark.OrmToolkit
         {
             get
             {
-                return "OrmToolkit";
+                return "OrmToolkit (No Query)";
             }
         }
 
@@ -41,23 +41,23 @@ namespace OrmBenchmark.OrmToolkit
         public IPost GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
-            return conn.Query<Post>("select * from Posts where Id=@Id", param, option).First();
+            return conn.Get<Post>(param, option);
         }
         
         public dynamic GetItemAsDynamic(int Id)
         {
             object param = new { Id = Id };
-            return conn.Query("select * from Posts where Id=@Id", param).First();
+            return conn.Get("Posts", param);
         }
 
         public IList<IPost> GetAllItemsAsObject()
         {
-            return conn.Query<Post>("select * from Posts", null, option).ToList<IPost>();
+            return conn.GetAll<Post>(null, null, option).ToList<IPost>();
         }
 
         public IList<dynamic> GetAllItemsAsDynamic()
         {
-            return conn.Query("select * from Posts", null).ToList();
+            return conn.GetAll("Posts", null, null).ToList();
         }
         public void Finish()
         {

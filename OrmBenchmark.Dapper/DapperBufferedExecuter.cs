@@ -26,7 +26,7 @@ namespace OrmBenchmark.Dapper
             conn = new SqlConnection(connectionStrong);
             conn.Open();
         }
-
+        
         public IPost GetItemAsObject(int Id)
         {
             object param = new { Id = Id };

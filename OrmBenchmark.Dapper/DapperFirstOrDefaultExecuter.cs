@@ -9,7 +9,7 @@ using Dapper;
 
 namespace OrmBenchmark.Dapper
 {
-    public class DapperExecuter : IOrmExecuter
+    public class DapperFirstOrDefaultExecuter : IOrmExecuter
     {
         SqlConnection conn;
 
@@ -17,7 +17,7 @@ namespace OrmBenchmark.Dapper
         {
             get
             {
-                return "Dapper Query (Non Buffered)";
+                return "Dapper Query (First Or Default)";
             }
         }
 
@@ -30,23 +30,23 @@ namespace OrmBenchmark.Dapper
         public IPost GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
-            return conn.Query<Post>("select * from Posts where Id=@Id", param, buffered: false).First();
+            return conn.QueryFirstOrDefault<Post>("select * from Posts where Id=@Id", param);
         }
 
         public dynamic GetItemAsDynamic(int Id)
         {
             object param = new { Id = Id };
-            return conn.Query("select * from Posts where Id=@Id", param, buffered: false).First();
+            return conn.QueryFirstOrDefault("select * from Posts where Id=@Id", param);
         }
 
         public IList<IPost> GetAllItemsAsObject()
         {
-            return conn.Query<Post>("select * from Posts", null, buffered: false).ToList<IPost>();
+            return null;
         }
 
         public IList<dynamic> GetAllItemsAsDynamic()
         {
-            return conn.Query("select * from Posts", null, buffered: false).ToList();
+            return null;
         }
 
         public void Finish()

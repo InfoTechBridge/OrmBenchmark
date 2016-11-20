@@ -9,6 +9,7 @@ namespace OrmBenchmark.Core
     public class BenchmarkResult
     {
         public string Name { get; set; }
+        public long FirstItemExecTime { get; set; }
         public long ExecTime { get; set; }
     }
 }

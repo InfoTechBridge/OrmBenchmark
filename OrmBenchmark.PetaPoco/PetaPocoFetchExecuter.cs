@@ -17,7 +17,7 @@ namespace OrmBenchmark.PetaPoco
         {
             get
             {
-                return "Peta Poco (Fetch)";
+                return "PetaPoco (Fetch)";
             }
         }
 
