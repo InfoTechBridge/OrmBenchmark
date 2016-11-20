@@ -31,7 +31,7 @@ namespace OrmBenchmark.OrmToolkit
             option = new QueryOption()
             {
                 DataProviderFactory = new ORMToolkit.Core.Factories.SqlServer.SqlServerFactory(),
-                ObjectFactoryType = ObjectFactoryType.ReflectionFast,
+                ObjectFactoryType = ObjectFactoryType.ReflectionFastCache,
                 DynamicObjectFactory = new ExpandoDynamicObjectFactory(),
                 //DynamicObjectFactory = new RickExpandoDynamicObjectFactory();// slower
                 ParameterNamePrefixInQuery = '@',

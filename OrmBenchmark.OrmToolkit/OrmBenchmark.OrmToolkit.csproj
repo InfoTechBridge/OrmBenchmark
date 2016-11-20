@@ -34,8 +34,8 @@
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.24160719\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ORMToolkit.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ORMToolkit.Core.1.0.0-beta\lib\net45\ORMToolkit.Core.dll</HintPath>
+    <Reference Include="ORMToolkit.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=273f33d6423437d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\ORMToolkit.Core.1.0.3-beta\lib\net45\ORMToolkit.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
