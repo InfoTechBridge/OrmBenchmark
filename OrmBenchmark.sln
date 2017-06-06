@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.EntityFramework", "OrmBenchmark.EntityFramework\OrmBenchmark.EntityFramework.csproj", "{2BA7706F-362E-4A68-901C-F9E9BEED49BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -116,6 +118,18 @@ Global
 		{C06EEBA4-C0E4-4D6A-B6C7-8A5BC03C9079}.Release|x64.Build.0 = Release|Any CPU
 		{C06EEBA4-C0E4-4D6A-B6C7-8A5BC03C9079}.Release|x86.ActiveCfg = Release|Any CPU
 		{C06EEBA4-C0E4-4D6A-B6C7-8A5BC03C9079}.Release|x86.Build.0 = Release|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Debug|x64.Build.0 = Debug|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Debug|x86.Build.0 = Debug|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Release|x64.ActiveCfg = Release|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Release|x64.Build.0 = Release|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{2BA7706F-362E-4A68-901C-F9E9BEED49BF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

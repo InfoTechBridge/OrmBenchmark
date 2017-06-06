@@ -35,6 +35,9 @@ namespace OrmBenchmark.OrmToolkit
                 DynamicObjectFactory = new ExpandoDynamicObjectFactory(),
                 //DynamicObjectFactory = new RickExpandoDynamicObjectFactory();// slower
                 ParameterNamePrefixInQuery = '@',
+
+                ObjectFactory = typeof(Reflection1ObjectFactory<>),
+                ObjectFactory1 = new ObjectFactory1()
             };
         }
         

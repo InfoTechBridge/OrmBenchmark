@@ -12,8 +12,8 @@ namespace OrmBenchmark.ConsoleUI
     {
         static void Main(string[] args)
         {
-            string connStr = ConfigurationManager.ConnectionStrings["OrmBenchmark.ConsoleUI.Properties.Settings.OrmBenchmarkConnectionString"].ConnectionString;
-            //string connStr = ConfigurationManager.ConnectionStrings["sqlServerLocal"].ConnectionString;
+            //string connStr = ConfigurationManager.ConnectionStrings["OrmBenchmark.ConsoleUI.Properties.Settings.OrmBenchmarkConnectionString"].ConnectionString;
+            string connStr = ConfigurationManager.ConnectionStrings["sqlServerLocal"].ConnectionString;
             bool warmUp = false;
 
             var benchmarker = new Benchmarker(connStr, 500);
@@ -31,6 +31,9 @@ namespace OrmBenchmark.ConsoleUI
             benchmarker.RegisterOrmExecuter(new PetaPoco.PetaPocoFetchFastExecuter());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitExecuter());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitNoQueryExecuter());
+            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitAutoMapperExecuter());
+            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitCacheExecuter());
+            benchmarker.RegisterOrmExecuter(new EntityFramework.EntityFrameworkExecuter());
 
             Console.Write("\nDo you like to have a warm-up stage(y/[n])?");
             var str = Console.ReadLine();
