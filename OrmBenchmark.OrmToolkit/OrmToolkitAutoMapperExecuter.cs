@@ -49,8 +49,7 @@ namespace OrmBenchmark.OrmToolkit
         
         public dynamic GetItemAsDynamic(int Id)
         {
-            object param = new { Id = Id };
-            return conn.Query("select * from Posts where Id=@Id", param).First();
+            return null;
         }
 
         public IList<IPost> GetAllItemsAsObject()
@@ -60,7 +59,7 @@ namespace OrmBenchmark.OrmToolkit
 
         public IList<dynamic> GetAllItemsAsDynamic()
         {
-            return conn.Query("select * from Posts", null).ToList();
+            return null;
         }
         public void Finish()
         {

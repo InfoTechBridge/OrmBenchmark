@@ -32,7 +32,7 @@ namespace OrmBenchmark.ConsoleUI
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitExecuter());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitNoQueryExecuter());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitAutoMapperExecuter());
-            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitCacheExecuter());
+            benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitTestExecuter());
             benchmarker.RegisterOrmExecuter(new EntityFramework.EntityFrameworkExecuter());
 
             Console.Write("\nDo you like to have a warm-up stage(y/[n])?");

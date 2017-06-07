@@ -9,14 +9,21 @@ using System.Runtime.CompilerServices;
 using AutoMapper;
 using AutoMapper.Mappers;
 
+
 namespace OrmBenchmark.OrmToolkit
 {
     public class AutoMapperObjectFactory : IObjectFactory1
     {
         public AutoMapperObjectFactory()
         {
-            Mapper.Initialize(cfg => { });
-            MapperRegistry.Mappers.Add(new DataReaderMapper());
+            //Mapper.Initialize(cfg => { });
+            //MapperRegistry.Mappers.Add(new DataReaderMapper());
+
+            Mapper.Initialize(cfg =>
+            {
+                //MapperRegistry.Mappers.Add(new DataReaderMapper { YieldReturnEnabled = true });
+                MapperRegistry.Mappers.Add(new DataReaderMapper());
+            });
         }
         
         public object CreateObject(IDataReader reader, Type objectType)
@@ -31,7 +38,8 @@ namespace OrmBenchmark.OrmToolkit
 
         public IEnumerable<T> CreateObjects<T>(IDataReader reader) where T : class, new()
         {
-            return Mapper.DynamicMap<IDataReader, List<T>>(reader);
+            foreach (var o in Mapper.DynamicMap<IDataReader, IEnumerable<T>>(reader))
+                yield return o;
         }
     }
 }

@@ -37,7 +37,7 @@ namespace OrmBenchmark.OrmToolkit
                 ParameterNamePrefixInQuery = '@',
 
                 ObjectFactory = typeof(Reflection1ObjectFactory<>),
-                ObjectFactory1 = new ObjectFactory1()
+                ObjectFactory1 = new ObjectFactory2()
             };
         }
         
