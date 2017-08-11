@@ -30,15 +30,17 @@ namespace OrmBenchmark.OrmToolkit
 
             option = new QueryOption()
             {
-                DataProviderFactory = new ORMToolkit.Core.Factories.SqlServer.SqlServerFactory(),
-                ObjectFactoryType = ObjectFactoryType.ReflectionFastCache,
-                DynamicObjectFactory = new ExpandoDynamicObjectFactory(),
-                //DynamicObjectFactory = new RickExpandoDynamicObjectFactory();// slower
-                ParameterNamePrefixInQuery = '@',
+                //DataProviderFactory = new ORMToolkit.Core.Factories.SqlServer.SqlServerFactory(),
+                //ObjectFactoryType = ObjectFactoryType.ReflectionFastCache,
+                //DynamicObjectFactory = new ExpandoDynamicObjectFactory(),
+                ////DynamicObjectFactory = new RickExpandoDynamicObjectFactory();// slower
+                //ParameterNamePrefixInQuery = '@',
 
-                ObjectFactory = typeof(Reflection1ObjectFactory<>),
-                ObjectFactory1 = new AutoMapperObjectFactory()
+                //ObjectFactory = typeof(Reflection1ObjectFactory<>),
+                //ObjectFactory1 = new AutoMapperObjectFactory()
             };
+
+            OrmToolkitSettings.ObjectFactory = new AutoMapperObjectFactory();
         }
         
         public IPost GetItemAsObject(int Id)

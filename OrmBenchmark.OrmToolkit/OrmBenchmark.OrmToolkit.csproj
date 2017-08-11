@@ -39,7 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ORMToolkit.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ORMToolkit.Core.1.0.22-beta\lib\net45\ORMToolkit.Core.dll</HintPath>
+      <HintPath>..\packages\ORMToolkit.Core.1.0.23-beta\lib\net45\ORMToolkit.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

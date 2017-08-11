@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ORMToolkit.Core;
 using ORMToolkit.Core.Factories;
+using ORMToolkit.Core.CacheProvider;
 
 namespace OrmBenchmark.OrmToolkit
 {
@@ -30,15 +31,21 @@ namespace OrmBenchmark.OrmToolkit
 
             option = new QueryOption()
             {
-                DataProviderFactory = new ORMToolkit.Core.Factories.SqlServer.SqlServerFactory(),
-                ObjectFactoryType = ObjectFactoryType.ReflectionFastCache,
-                DynamicObjectFactory = new ExpandoDynamicObjectFactory(),
-                //DynamicObjectFactory = new RickExpandoDynamicObjectFactory();// slower
-                ParameterNamePrefixInQuery = '@',
+                //DataProviderFactory = new ORMToolkit.Core.Factories.SqlServer.SqlServerFactory(),
+                //ObjectFactoryType = ObjectFactoryType.ReflectionFastCache,
+                //DynamicObjectFactory = new ExpandoDynamicObjectFactory(),
+                ////DynamicObjectFactory = new RickExpandoDynamicObjectFactory();// slower
+                //ParameterNamePrefixInQuery = '@',
 
-                ObjectFactory = typeof(Reflection1ObjectFactory<>),
-                ObjectFactory1 = new ObjectFactory3()
+                //ObjectFactory = typeof(Reflection1ObjectFactory<>),
+                //ObjectFactory1 = new ObjectFactory3()
             };
+
+            OrmToolkitSettings.ObjectFactory = new ObjectFactory3();
+
+            OrmToolkitSettings.CommandsCache = new HashsetInstanceCache(); //ObjectInstanceCache();
+            OrmToolkitSettings.TypesCache = new HashsetInstanceCache(); //ObjectInstanceCache();
+
         }
         
         public IPost GetItemAsObject(int Id)
