@@ -20,7 +20,7 @@ namespace OrmBenchmark.OrmToolkit
         {
             get
             {
-                return "OrmToolkit (Test)";
+                return "OrmToolkit (Beta)";
             }
         }
 
@@ -31,20 +31,13 @@ namespace OrmBenchmark.OrmToolkit
 
             option = new QueryOption()
             {
-                //DataProviderFactory = new ORMToolkit.Core.Factories.SqlServer.SqlServerFactory(),
-                //ObjectFactoryType = ObjectFactoryType.ReflectionFastCache,
-                //DynamicObjectFactory = new ExpandoDynamicObjectFactory(),
-                ////DynamicObjectFactory = new RickExpandoDynamicObjectFactory();// slower
-                //ParameterNamePrefixInQuery = '@',
-
-                //ObjectFactory = typeof(Reflection1ObjectFactory<>),
-                //ObjectFactory1 = new ObjectFactory3()
+                
             };
 
             OrmToolkitSettings.ObjectFactory = new ObjectFactory3();
-
-            OrmToolkitSettings.CommandsCache = new HashsetInstanceCache(); //ObjectInstanceCache();
-            OrmToolkitSettings.TypesCache = new HashsetInstanceCache(); //ObjectInstanceCache();
+            // Use fresh caches
+            OrmToolkitSettings.CommandsCache = new HashsetInstanceCache();
+            OrmToolkitSettings.TypesCache = new HashsetInstanceCache(); 
 
         }
         
