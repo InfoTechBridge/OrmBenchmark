@@ -36,6 +36,7 @@ namespace OrmBenchmark.ConsoleUI
             benchmarker.RegisterOrmExecuter(new EntityFramework.EntityFrameworkExecuter());
             benchmarker.RegisterOrmExecuter(new InsightDatabase.InsightDatabaseExecuter());
             benchmarker.RegisterOrmExecuter(new InsightDatabase.InsightSingleDatabaseExecuter());
+            benchmarker.RegisterOrmExecuter(new OrmLite.OrmLiteExecuter());
 
             Console.Write("\nDo you like to have a warm-up stage(y/[n])?");
             var str = Console.ReadLine();

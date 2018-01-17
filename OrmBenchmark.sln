@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.Core", "OrmBenchmark.Core\OrmBenchmark.Core.csproj", "{E4018574-EA43-4347-9822-0921AE52AF8B}"
 EndProject
@@ -25,6 +25,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.EntityFramework", "OrmBenchmark.EntityFramework\OrmBenchmark.EntityFramework.csproj", "{2BA7706F-362E-4A68-901C-F9E9BEED49BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.InsightDatabase", "OrmBenchmark.Insight.Database\OrmBenchmark.InsightDatabase.csproj", "{C8F13BED-45B9-4D97-A1AE-FDC265CA13C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.OrmLite", "OrmBenchmark.OrmLite\OrmBenchmark.OrmLite.csproj", "{1F25B2D4-8026-42E8-BC28-227C949EF087}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,6 +146,18 @@ Global
 		{C8F13BED-45B9-4D97-A1AE-FDC265CA13C1}.Release|x64.Build.0 = Release|Any CPU
 		{C8F13BED-45B9-4D97-A1AE-FDC265CA13C1}.Release|x86.ActiveCfg = Release|Any CPU
 		{C8F13BED-45B9-4D97-A1AE-FDC265CA13C1}.Release|x86.Build.0 = Release|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Debug|x64.Build.0 = Debug|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Debug|x86.Build.0 = Debug|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Release|x64.ActiveCfg = Release|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Release|x64.Build.0 = Release|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F25B2D4-8026-42E8-BC28-227C949EF087}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -121,6 +121,10 @@
       <Project>{c8f13bed-45b9-4d97-a1ae-fdc265ca13c1}</Project>
       <Name>OrmBenchmark.InsightDatabase</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.OrmLite\OrmBenchmark.OrmLite.csproj">
+      <Project>{1f25b2d4-8026-42e8-bc28-227c949ef087}</Project>
+      <Name>OrmBenchmark.OrmLite</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OrmBenchmark.OrmToolkit\OrmBenchmark.OrmToolkit.csproj">
       <Project>{26205493-9b94-4bbe-8a63-30322dc0f001}</Project>
       <Name>OrmBenchmark.OrmToolkit</Name>
