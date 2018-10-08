@@ -12,8 +12,8 @@ namespace OrmBenchmark.ConsoleUI
     {
         static void Main(string[] args)
         {
-            //string connStr = ConfigurationManager.ConnectionStrings["OrmBenchmark.ConsoleUI.Properties.Settings.OrmBenchmarkConnectionString"].ConnectionString;
-            string connStr = ConfigurationManager.ConnectionStrings["sqlServerLocal"].ConnectionString;
+            string connStr = ConfigurationManager.ConnectionStrings["OrmBenchmark.ConsoleUI.Properties.Settings.OrmBenchmarkConnectionString"].ConnectionString;
+            //string connStr = ConfigurationManager.ConnectionStrings["sqlServerLocal"].ConnectionString;
             bool warmUp = false;
 
             var benchmarker = new Benchmarker(connStr, 500);

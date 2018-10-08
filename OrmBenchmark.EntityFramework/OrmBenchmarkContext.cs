@@ -13,7 +13,8 @@ namespace OrmBenchmark.EntityFramework
     {
         public OrmBenchmarkContext(string connectionStrong) 
             //: base(GetSqlConnection(connectionStrong), true)
-            : base("name=sqlServerLocal")
+            //: base("name=sqlServerLocal")
+            : base(connectionStrong)
         {
             
 
