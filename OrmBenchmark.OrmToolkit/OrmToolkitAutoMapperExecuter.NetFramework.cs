@@ -1,4 +1,5 @@
-﻿using OrmBenchmark.Core;
+﻿#if NETFULL
+using OrmBenchmark.Core;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -67,3 +68,4 @@ namespace OrmBenchmark.OrmToolkit
 
     }
 }
+#endif

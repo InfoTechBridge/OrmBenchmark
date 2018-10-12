@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>OrmBenchmark.ConsoleUI.NetCore</RootNamespace>
+    <AssemblyName>OrmBenchmark.Console.NetCore</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrmBenchmark.Ado\OrmBenchmark.Ado.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.Dapper\OrmBenchmark.Dapper.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.EntityFramework\OrmBenchmark.EntityFramework.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.InsightDatabase\OrmBenchmark.InsightDatabase.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.OrmLite\OrmBenchmark.OrmLite.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.OrmToolkit\OrmBenchmark.OrmToolkit.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.PetaPoco\OrmBenchmark.PetaPoco.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.SimpleData\OrmBenchmark.SimpleData.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>System.Data</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>System.Xml</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="OrmBenchmark.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="OrmBenchmark_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

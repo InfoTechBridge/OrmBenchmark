@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace OrmBenchmark.Core
 {
@@ -75,8 +74,8 @@ namespace OrmBenchmark.Core
                     if (i == 1)
                         firstItemExecTime = watch.ElapsedMilliseconds;
                 }
-                results.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watch.ElapsedMilliseconds, FirstItemExecTime = firstItemExecTime});
-                
+                results.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watch.ElapsedMilliseconds, FirstItemExecTime = firstItemExecTime });
+
                 // Dynamic
                 Stopwatch watchForDynamic = new Stopwatch();
                 firstItemExecTime = 0;
@@ -91,7 +90,7 @@ namespace OrmBenchmark.Core
                         firstItemExecTime = watchForDynamic.ElapsedMilliseconds;
                 }
                 resultsForDynamicItem.Add(new BenchmarkResult { Name = executer.Name, ExecTime = watchForDynamic.ElapsedMilliseconds, FirstItemExecTime = firstItemExecTime });
-                
+
                 // All Objects
                 Stopwatch watchForAllItems = new Stopwatch();
                 watchForAllItems.Start();

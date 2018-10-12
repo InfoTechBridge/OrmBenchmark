@@ -83,9 +83,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -97,44 +97,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OrmBenchmark.Ado\OrmBenchmark.Ado.csproj">
-      <Project>{c06eeba4-c0e4-4d6a-b6c7-8a5bc03c9079}</Project>
-      <Name>OrmBenchmark.Ado</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj">
-      <Project>{e4018574-ea43-4347-9822-0921ae52af8b}</Project>
-      <Name>OrmBenchmark.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrmBenchmark.Dapper\OrmBenchmark.Dapper.csproj">
-      <Project>{52bb39f0-d161-4ec0-b223-1ebb0ca48e07}</Project>
-      <Name>OrmBenchmark.Dapper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrmBenchmark.EntityFramework\OrmBenchmark.EntityFramework.csproj">
-      <Project>{2ba7706f-362e-4a68-901c-f9e9beed49bf}</Project>
-      <Name>OrmBenchmark.EntityFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrmBenchmark.Insight.Database\OrmBenchmark.InsightDatabase.csproj">
-      <Project>{c8f13bed-45b9-4d97-a1ae-fdc265ca13c1}</Project>
-      <Name>OrmBenchmark.InsightDatabase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrmBenchmark.OrmLite\OrmBenchmark.OrmLite.csproj">
-      <Project>{1f25b2d4-8026-42e8-bc28-227c949ef087}</Project>
-      <Name>OrmBenchmark.OrmLite</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrmBenchmark.OrmToolkit\OrmBenchmark.OrmToolkit.csproj">
-      <Project>{26205493-9b94-4bbe-8a63-30322dc0f001}</Project>
-      <Name>OrmBenchmark.OrmToolkit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrmBenchmark.PetaPoco\OrmBenchmark.PetaPoco.csproj">
-      <Project>{20406817-10ab-47cc-9d6f-c58e33a349d7}</Project>
-      <Name>OrmBenchmark.PetaPoco</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OrmBenchmark.SimpleData\OrmBenchmark.SimpleData.csproj">
-      <Project>{f2a4a7ef-1372-45c9-9955-b4a98fe869bd}</Project>
-      <Name>OrmBenchmark.SimpleData</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -150,12 +112,50 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OrmBenchmark.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="OrmBenchmark_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>OrmBenchmark.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrmBenchmark.Ado\OrmBenchmark.Ado.csproj">
+      <Project>{92d3ddbf-22df-4984-bf82-8f26bf837f58}</Project>
+      <Name>OrmBenchmark.Ado</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj">
+      <Project>{bf582e10-662a-48f8-a52a-07fd5e9e14d9}</Project>
+      <Name>OrmBenchmark.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.Dapper\OrmBenchmark.Dapper.csproj">
+      <Project>{6fef3e25-bba1-4915-aafb-66ff9c00e478}</Project>
+      <Name>OrmBenchmark.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.EntityFramework\OrmBenchmark.EntityFramework.csproj">
+      <Project>{e08c4e3b-0689-4b6b-83a7-51fd7a722815}</Project>
+      <Name>OrmBenchmark.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.InsightDatabase\OrmBenchmark.InsightDatabase.csproj">
+      <Project>{8125a383-320a-4f37-8518-8b0712ca8d31}</Project>
+      <Name>OrmBenchmark.InsightDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.OrmLite\OrmBenchmark.OrmLite.csproj">
+      <Project>{c74719fe-6e81-4591-b2bc-cc1cfecc9722}</Project>
+      <Name>OrmBenchmark.OrmLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.OrmToolkit\OrmBenchmark.OrmToolkit.csproj">
+      <Project>{fa61681e-96fc-412f-a024-ecc7478afdeb}</Project>
+      <Name>OrmBenchmark.OrmToolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.PetaPoco\OrmBenchmark.PetaPoco.csproj">
+      <Project>{288636f3-963c-4a6c-8abf-99f99f4e1ca1}</Project>
+      <Name>OrmBenchmark.PetaPoco</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.SimpleData\OrmBenchmark.SimpleData.csproj">
+      <Project>{e66cb3ba-31d3-4c1a-863f-697fcf24b401}</Project>
+      <Name>OrmBenchmark.SimpleData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

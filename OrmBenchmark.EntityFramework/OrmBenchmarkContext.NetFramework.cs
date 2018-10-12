@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NETFULL
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
@@ -40,3 +41,4 @@ namespace OrmBenchmark.EntityFramework
         }
     }
 }
+#endif

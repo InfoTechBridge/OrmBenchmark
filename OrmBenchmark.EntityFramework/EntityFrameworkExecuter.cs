@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace OrmBenchmark.EntityFramework
 {
@@ -23,13 +22,13 @@ namespace OrmBenchmark.EntityFramework
         {
 
             ctx = new OrmBenchmarkContext(connectionStrong);
-            
+
         }
 
         public IPost GetItemAsObject(int Id)
         {
             return ctx.Posts.Where(p => p.Id == Id) as IPost;
-             
+
         }
 
         public dynamic GetItemAsDynamic(int Id)
@@ -76,7 +75,7 @@ namespace OrmBenchmark.EntityFramework
         }
         public void Finish()
         {
-            
+
         }
     }
 }

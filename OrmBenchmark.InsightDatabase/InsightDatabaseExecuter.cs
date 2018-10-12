@@ -1,17 +1,18 @@
 ﻿using Insight.Database;
 using OrmBenchmark.Core;
-using OrmBenchmark.Insight.Database;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 
 namespace OrmBenchmark.InsightDatabase
 {
-    public class InsightSingleDatabaseExecuter : IOrmExecuter
+    public class InsightDatabaseExecuter : IOrmExecuter
     {
         private SqlConnection conn;
 
-        public string Name => "Insight Database (Single)";
+        public string Name => "Insight Database";
 
         public void Finish()
         {
@@ -20,24 +21,24 @@ namespace OrmBenchmark.InsightDatabase
 
         public IList<dynamic> GetAllItemsAsDynamic()
         {
-            return null;
+            return conn.QuerySql<dynamic>("select * from Posts");
         }
 
         public IList<IPost> GetAllItemsAsObject()
         {
-            return null;
+            return conn.QuerySql<Post>("select * from Posts").ToList<IPost>();
         }
 
         public dynamic GetItemAsDynamic(int Id)
         {
             object param = new { Id = Id };
-            return conn.SingleSql<dynamic>("select * from Posts where Id=@Id", param);
+            return conn.QuerySql<dynamic>("select * from Posts where Id=@Id", param).FirstOrDefault();
         }
 
         public IPost GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
-            return conn.SingleSql<Post>("select * from Posts where Id=@Id", param);
+            return conn.QuerySql<Post>("select * from Posts where Id=@Id", param).FirstOrDefault();
         }
 
         public void Init(string connectionStrong)

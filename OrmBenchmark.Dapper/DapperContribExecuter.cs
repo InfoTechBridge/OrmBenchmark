@@ -1,12 +1,10 @@
-﻿using OrmBenchmark.Core;
+﻿using Dapper.Contrib.Extensions;
+using OrmBenchmark.Core;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Dapper;
-using Dapper.Contrib.Extensions;
 
 namespace OrmBenchmark.Dapper
 {
@@ -27,7 +25,7 @@ namespace OrmBenchmark.Dapper
             conn = new SqlConnection(connectionStrong);
             conn.Open();
         }
-        
+
         public IPost GetItemAsObject(int Id)
         {
             return conn.Get<Post>(Id);

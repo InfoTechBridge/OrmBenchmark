@@ -1,10 +1,9 @@
-﻿using OrmBenchmark.Core;
+﻿#if NETFULL
+using OrmBenchmark.Core;
 using Simple.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace OrmBenchmark.SimpleData
 {
@@ -22,7 +21,7 @@ namespace OrmBenchmark.SimpleData
 
         public void Init(string connectionStrong)
         {
-            sdb = Database.OpenConnection(connectionStrong);//, "System.Data.SqlClient");
+            sdb = Database.OpenConnection(connectionStrong);
         }
 
         public IPost GetItemAsObject(int Id)
@@ -47,8 +46,9 @@ namespace OrmBenchmark.SimpleData
 
         public void Finish()
         {
-            
+
         }
 
     }
 }
+#endif

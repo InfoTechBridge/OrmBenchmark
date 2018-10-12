@@ -1,10 +1,8 @@
-﻿using OrmBenchmark.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using OrmBenchmark.Core;
 using System.Dynamic;
 
 namespace OrmBenchmark.Ado
@@ -37,7 +35,8 @@ namespace OrmBenchmark.Ado
             using (var reader = cmd.ExecuteReader())
             {
                 reader.Read();
-                obj = new Post {
+                obj = new Post
+                {
                     Id = reader.GetInt32(0),
                     Text = reader.GetNullableString(1),
                     CreationDate = reader.GetDateTime(2),
@@ -59,6 +58,8 @@ namespace OrmBenchmark.Ado
 
         public dynamic GetItemAsDynamic(int Id)
         {
+            return null;
+
             var cmd = conn.CreateCommand();
             cmd.CommandText = @"select * from Posts where Id = @Id";
             var idParam = cmd.Parameters.Add("@Id", System.Data.SqlDbType.Int);
@@ -99,7 +100,8 @@ namespace OrmBenchmark.Ado
             {
                 while (reader.Read())
                 {
-                    Post obj = new Post {
+                    Post obj = new Post
+                    {
                         Id = reader.GetInt32(0),
                         Text = reader.GetNullableString(1),
                         CreationDate = reader.GetDateTime(2),
@@ -124,6 +126,9 @@ namespace OrmBenchmark.Ado
 
         public IList<dynamic> GetAllItemsAsDynamic()
         {
+            return null;
+
+#if NETFULL
             var cmd = conn.CreateCommand();
             cmd.CommandText = @"select * from Posts";
 
@@ -154,12 +159,15 @@ namespace OrmBenchmark.Ado
             }
 
             return list;
+#else
+            return null;
+#endif
         }
 
         public void Finish()
         {
             conn.Close();
         }
-       
+
     }
 }

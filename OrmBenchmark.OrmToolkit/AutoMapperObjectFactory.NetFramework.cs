@@ -1,4 +1,5 @@
-﻿using ORMToolkit.Core.Factories;
+﻿#if NETFULL
+using ORMToolkit.Core.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,3 +44,4 @@ namespace OrmBenchmark.OrmToolkit
         }
     }
 }
+#endif

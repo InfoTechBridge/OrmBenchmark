@@ -1,7 +1,7 @@
 ﻿using OrmBenchmark.Core;
 using System;
 
-namespace OrmBenchmark.Insight.Database
+namespace OrmBenchmark.InsightDatabase
 {
     public class Post : IPost
     {

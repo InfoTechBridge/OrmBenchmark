@@ -2,16 +2,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
-    <RootNamespace>OrmBenchmark.Dapper</RootNamespace>
+    <RootNamespace>OrmBenchmark.InsightDatabase</RootNamespace>
   </PropertyGroup>
 
   <!-- common NuGet package refs that affect all projects -->
   <ItemGroup>
     <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj" />
-    <PackageReference Include="Dapper" Version="1.50.5" />
-    <PackageReference Include="Dapper.Contrib" Version="1.50.5" />
+    <PackageReference Include="Insight.Database" Version="6.2.5" />
   </ItemGroup>
-
 
   <!-- .NET Standard 2.0 references, compilation flags and build options -->
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
@@ -39,5 +37,6 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net46'">
     <DefineConstants>NET46;NETFULL</DefineConstants>
   </PropertyGroup>
+
 
 </Project>

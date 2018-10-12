@@ -1,12 +1,10 @@
 ﻿using OrmBenchmark.Core;
+using ServiceStack.DataAnnotations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrmBenchmark.OrmLite
 {
+    [Alias("Posts")]
     public class Post : IPost
     {
         public int Id { get; set; }

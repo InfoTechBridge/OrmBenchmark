@@ -1,11 +1,9 @@
-﻿using OrmBenchmark.Core;
-using PetaPoco;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using OrmBenchmark.Core;
+using PetaPoco;
 
 namespace OrmBenchmark.PetaPoco
 {
@@ -32,7 +30,7 @@ namespace OrmBenchmark.PetaPoco
             object param = new { Id = Id };
             return petapoco.Query<Post>("select * from Posts where Id=@0", Id).First();
         }
-        
+
         public dynamic GetItemAsDynamic(int Id)
         {
             object param = new { Id = Id };

@@ -3,10 +3,8 @@ using ServiceStack.OrmLite;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace OrmBenchmark.OrmLite
 {
@@ -28,17 +26,17 @@ namespace OrmBenchmark.OrmLite
             dbFactory = new OrmLiteConnectionFactory(connectionStrong, SqlServerDialect.Provider);
             conn = dbFactory.Open();
         }
-        
+
         public IPost GetItemAsObject(int Id)
         {
             object param = new { Id = Id };
             return conn.Single<Post>("select * from Posts where Id=@Id", param);
-            //return conn.SingleById<Post>(Id);
         }
-        
+
         public dynamic GetItemAsDynamic(int Id)
         {
-            return null;
+            object param = new { Id = Id };
+            return conn.Single<dynamic>("select * from Posts where Id=@Id", param);
         }
 
         public IList<IPost> GetAllItemsAsObject()
@@ -48,7 +46,7 @@ namespace OrmBenchmark.OrmLite
 
         public IList<dynamic> GetAllItemsAsDynamic()
         {
-            return null;
+            return conn.Select<dynamic>("select * from Posts");
         }
         public void Finish()
         {
