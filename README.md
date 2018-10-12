@@ -36,5 +36,5 @@ How to run the benchmarks
 
 Just download the project and run it or add your favorite ORM as a plugin to the project.
 
-- For testing .Net Framework ORMs run **OrmBenchmark.Console.Framework** project.
+- For testing .Net Framework ORMs run **OrmBenchmark.Console** project.
 - For testing .Net Core ORMs run **OrmBenchmark.Console.NetCore** project.
