@@ -34,7 +34,8 @@ namespace OrmBenchmark.ConsoleUI
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitNoQueryExecuter());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitAutoMapperExecuter());
             benchmarker.RegisterOrmExecuter(new OrmToolkit.OrmToolkitTestExecuter());
-            benchmarker.RegisterOrmExecuter(new EntityFramework.EntityFrameworkExecuter());
+            //benchmarker.RegisterOrmExecuter(new EntityFramework.EntityFrameworkExecuter());
+            benchmarker.RegisterOrmExecuter(new EntityFramework.EntityFrameworNoTrackingExecuter());
             benchmarker.RegisterOrmExecuter(new InsightDatabase.InsightDatabaseExecuter());
             benchmarker.RegisterOrmExecuter(new InsightDatabase.InsightSingleDatabaseExecuter());
             benchmarker.RegisterOrmExecuter(new OrmLite.OrmLiteExecuter());
