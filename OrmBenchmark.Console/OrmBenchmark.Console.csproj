@@ -132,6 +132,10 @@
       <Project>{6fef3e25-bba1-4915-aafb-66ff9c00e478}</Project>
       <Name>OrmBenchmark.Dapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OrmBenchmark.DevExpress\OrmBenchmark.DevExpress.csproj">
+      <Project>{57cf52c7-22ec-441e-992d-eec311a8a157}</Project>
+      <Name>OrmBenchmark.DevExpress</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OrmBenchmark.EntityFramework\OrmBenchmark.EntityFramework.csproj">
       <Project>{e08c4e3b-0689-4b6b-83a7-51fd7a722815}</Project>
       <Name>OrmBenchmark.EntityFramework</Name>

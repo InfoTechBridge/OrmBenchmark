@@ -55,6 +55,7 @@ namespace OrmBenchmark.ConsoleUI.NetCore
             benchmarker.RegisterOrmExecuter(new InsightDatabase.InsightSingleDatabaseExecuter());
             benchmarker.RegisterOrmExecuter(new OrmLite.OrmLiteExecuter());
             benchmarker.RegisterOrmExecuter(new OrmLite.OrmLiteNoQueryExecuter());
+            //benchmarker.RegisterOrmExecuter(new DevExpress.DevExpressQueryExecuter());
 
             Console.WriteLine("ORM Benchmark");
 

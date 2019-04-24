@@ -17,6 +17,7 @@
     <ProjectReference Include="..\OrmBenchmark.Ado\OrmBenchmark.Ado.csproj" />
     <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj" />
     <ProjectReference Include="..\OrmBenchmark.Dapper\OrmBenchmark.Dapper.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.DevExpress\OrmBenchmark.DevExpress.csproj" />
     <ProjectReference Include="..\OrmBenchmark.EntityFramework\OrmBenchmark.EntityFramework.csproj" />
     <ProjectReference Include="..\OrmBenchmark.InsightDatabase\OrmBenchmark.InsightDatabase.csproj" />
     <ProjectReference Include="..\OrmBenchmark.OrmLite\OrmBenchmark.OrmLite.csproj" />
