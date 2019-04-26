@@ -30,6 +30,8 @@ Here is list of ORMs and data access technologis that this program tests.
 - InsightDatabase
 - SimpleData
 - OrmToolkit
+- DevExpress Xpo (Not working with Local DB mode
+)
 
 How to run the benchmarks
 -------------------------

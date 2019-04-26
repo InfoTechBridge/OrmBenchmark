@@ -19,7 +19,7 @@ namespace OrmBenchmark.DevExpress
         {
             get
             {
-                return "Xpo";
+                return "DevExpress Xpo";
             }
         }
 

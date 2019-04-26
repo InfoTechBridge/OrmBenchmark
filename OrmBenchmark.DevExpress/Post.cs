@@ -4,8 +4,9 @@ using System;
 
 namespace OrmBenchmark.DevExpress
 {
+    [Persistent(mapTo: "Posts")]
     public class Post : XPLiteObject ,IPost
-    {
+    {       
         public Post(Session session)
         : base(session)
         {
