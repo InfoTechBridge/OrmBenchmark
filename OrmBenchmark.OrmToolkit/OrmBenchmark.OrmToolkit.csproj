@@ -8,7 +8,7 @@
   <!-- common NuGet package refs that affect all projects -->
   <ItemGroup>
     <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj" />
-    <PackageReference Include="ORMToolkit.Core" Version="1.0.36" />
+    <PackageReference Include="ORMToolkit.Core" Version="1.0.37" />
   </ItemGroup>
 
   <!-- .NET Standard 2.0 references, compilation flags and build options -->
@@ -16,7 +16,7 @@
     <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
   </ItemGroup>
 
 
