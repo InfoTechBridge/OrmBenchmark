@@ -37,6 +37,7 @@
     <ProjectReference Include="..\OrmBenchmark.OrmLite\OrmBenchmark.OrmLite.csproj" />
     <ProjectReference Include="..\OrmBenchmark.OrmToolkit\OrmBenchmark.OrmToolkit.csproj" />
     <ProjectReference Include="..\OrmBenchmark.PetaPoco\OrmBenchmark.PetaPoco.csproj" />
+    <ProjectReference Include="..\OrmBenchmark.RepoDb\OrmBenchmark.RepoDb.csproj" />
     <ProjectReference Include="..\OrmBenchmark.SimpleData\OrmBenchmark.SimpleData.csproj" />
   </ItemGroup>
 

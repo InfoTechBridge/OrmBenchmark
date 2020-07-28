@@ -32,6 +32,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrmBenchmark.SimpleData", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrmBenchmark.DevExpress", "OrmBenchmark.DevExpress\OrmBenchmark.DevExpress.csproj", "{57CF52C7-22EC-441E-992D-EEC311A8A157}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmBenchmark.RepoDb", "OrmBenchmark.RepoDb\OrmBenchmark.RepoDb.csproj", "{FDAEC3CC-560A-46DC-9AAA-18230302BD64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -186,6 +188,18 @@ Global
 		{57CF52C7-22EC-441E-992D-EEC311A8A157}.Release|x64.Build.0 = Release|Any CPU
 		{57CF52C7-22EC-441E-992D-EEC311A8A157}.Release|x86.ActiveCfg = Release|Any CPU
 		{57CF52C7-22EC-441E-992D-EEC311A8A157}.Release|x86.Build.0 = Release|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Debug|x64.Build.0 = Debug|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Debug|x86.Build.0 = Debug|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Release|x64.ActiveCfg = Release|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Release|x64.Build.0 = Release|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Release|x86.ActiveCfg = Release|Any CPU
+		{FDAEC3CC-560A-46DC-9AAA-18230302BD64}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
