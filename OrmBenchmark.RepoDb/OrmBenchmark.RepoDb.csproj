@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <RootNamespace>OrmBenchmark.RepoDb</RootNamespace>
+  </PropertyGroup>
+
+  <!-- common NuGet package refs that affect all projects -->
+  <ItemGroup>
+    <ProjectReference Include="..\OrmBenchmark.Core\OrmBenchmark.Core.csproj" />
+    <PackageReference Include="RepoDb.SqlServer" Version="1.0.12" />
+  </ItemGroup>
+</Project>
